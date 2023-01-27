@@ -1,0 +1,16 @@
+.sidebar {
+    width: 150px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+    float: right;
+    padding-top: 40px;
+    background-color: lightblue;
+    }
+.sidebar div {
+    padding: 8px;
+    font-size: 20px;
+    display: block;
+    }

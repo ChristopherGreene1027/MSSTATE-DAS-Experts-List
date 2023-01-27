@@ -1,0 +1,24 @@
+<html>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'experts/style.css' %}">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Base{% endblock %}</title>
+</head>
+<body>
+  <main>
+    {% if user.is_authenticated %}
+      {% if user.is_superuser %}
+      <a href="/admin">Admin Page</a><br>
+      {% endif %}
+      Currently Logged in as: {{ user.username }}
+      {% if request.path != "/" %}
+      <br><a href="/">Home</a> 
+      {% endif %}
+    {% else %}
+    {% endif %}
+    {% block content %}
+    {% endblock %}
+  </main>
+</body>
+</html>

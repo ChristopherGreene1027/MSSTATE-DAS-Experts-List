@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+{% if news_list %}
+    {% for news in news_list %}
+        <br><br>
+        <a href= '/expert/{{news.news_Expert.id}}'>{{news.news_Expert.expert_Name}}</a>
+        <br>
+        <a href = '{{news.news_Link}}'>{{news.news_Link_Description}}</a>
+        <br>
+        {{news_Description}}
+        <br>
+    {% endfor %}
+{% else %}
+News list not found
+{% endif %}
+{% if topics_list %}
+<div class="sidebar">
+    <div>Topics</div>
+    {% for topic in topics_list %}
+    <div><a href= '/topic/{{topic.id}}'>{{topic}}</a></div>
+    {% endfor %}
+</div>
+{% else %}
+Topics list not found
+{% endif %}
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+{% if expert %}
+    <br><br>
+    {{expert.expert_Name}}
+    <br>
+    Expert in {{expert.expert_Field}}
+    <br>
+    Phone: {{expert.expert_Phone}}
+    <br>
+    Email: {{expert.expert_Email}}
+    <br>
+    Achievements:
+    <br>
+    {{expert_Achievements}}
+    <br>
+    {% for topic in expert.expert_Topics.all %}
+        <a href= '/topic/{{topic.id}}'>{{topic}}</a>
+    {% endfor %}
+{% else %}
+Expert not found
+{% endif %}
+{% endblock %}

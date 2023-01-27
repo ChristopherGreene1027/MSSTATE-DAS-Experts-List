@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+{% if experts_list %}
+    {% for expert in experts_list %}
+        <br><br>
+        <a href= '/expert/{{expert.id}}'>{{expert.expert_Name}}</a>
+        <br>
+        {{expert.expert_Field}}
+        <br>
+        {% for topic in expert.expert_Topics.all %}
+            <a href= '/topic/{{topic.id}}'>{{topic}}</a>
+        {% endfor %}
+    {% endfor %}
+{% else %}
+Experts list not found
+{% endif %}
+{% if topics_list %}
+<div class="sidebar">
+    <div>Topics</div>
+    {% for topic in topics_list %}
+    <div><a href= '/topic/{{topic.id}}'>{{topic}}</a></div>
+    {% endfor %}
+</div>
+{% else %}
+Topics list not found
+{% endif %}
+{% endblock %}
