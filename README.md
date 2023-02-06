@@ -9,4 +9,8 @@ To Run Locally
 - run "python -m pip install Django"
 - run "python -m pip install Pillow"
 - navigate to the "Django" directory
+- run "py manage.py createsuperuser"
+- follow the steps to create a superuser
 - run "py manage.py runserver"
+- navigate to 192.168.0.0:8000/admin
+- login using the superuser you created
