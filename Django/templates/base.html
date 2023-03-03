@@ -1,6 +1,9 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <html>
   {% load static %}
-  <link rel="stylesheet" href="{% static 'experts/style.css' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <head>
   <meta charset="utf-8">
   <title>{% block title %}Base{% endblock %}</title>
@@ -9,12 +12,26 @@
   <main>
     {% if user.is_authenticated %}
       {% if user.is_superuser %}
-      <a href="/admin">Admin Page</a><br>
+
+        <section class="hero">
+          <div class="hero-body">
+            <img src="https://cdn01.its.msstate.edu/i/logos/cas/HORIZONTAL_WEB_maroon.svg" width="500px">
+          </div>
+        </section>
+
+        <section class="section">
+          <a href="/admin"><h1 class="is-size-4">Admin Page</h1></a><br>
+          <h2 class="is-size-5">
+            <p class="has-text-weight-light">Currently logged in as: {{ user.username }}</p>
+          </h2>
+          {% if request.path != "/" %}
+      <br><a href="/"> <h1 class="is-size-4">Homepage</h1></a> 
       {% endif %}
-      Currently Logged in as: {{ user.username }}
-      {% if request.path != "/" %}
-      <br><a href="/">Home</a> 
+        </section>
+
       {% endif %}
+      
+
     {% else %}
     {% endif %}
     {% block content %}
