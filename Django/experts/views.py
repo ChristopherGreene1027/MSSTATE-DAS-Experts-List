@@ -23,4 +23,6 @@ def news(request):
     topics_list = Topic.objects.order_by('-topic_Name')
     news_list = News.objects.order_by('-created_at')
     context = {'experts_list' : experts_list,'topics_list' : topics_list,'news_list':news_list}
+    #I'm assuming it's gonna be something like
+    #news_images = News.objects.orderby(-'news_Images') ?
     return render(request, 'experts/news.html',context)
