@@ -3,7 +3,7 @@
 {% block content %}
 {% if experts_list %}
     {% for expert in experts_list %}
-        <br>
+        <br><br>
         <a href= '/expert/{{expert.id}}'>{{expert.expert_Name}}</a>
         <br>
         {{expert.expert_Field}}
@@ -16,62 +16,12 @@
 Experts list not found
 {% endif %}
 {% if topics_list %}
-
-    <div class="tile">Topics</div>
+<div class="sidebar">
+    <div>Topics</div>
     {% for topic in topics_list %}
-    <a href= '/topic/{{topic.id}}'>{{topic}}</a>
+    <div><a href= '/topic/{{topic.id}}'>{{topic}}</a></div>
     {% endfor %}
-
-<!-- Main container -->
-<nav class="level">
-    <!-- Left side -->
-    <div class="level-left">
-      <div class="level-item">
-        <p class="is-size-4">All Experts</p>
-      </div>
-
-    <div class="level-item">
-    <!-- List of experts -->
-    {% if experts_list %}
-        {% for expert in experts_list %}
-            <br> <br> <br> <br>
-            <a href= '/expert/{{expert.id}}'>
-                <p class="ml-6">{{expert.expert_Name}}</p></a>
-            <br> <br> <br>
-            {{expert.expert_Field}}
-            <br>
-        {% endfor %}
-    {% else %}
-    Experts list not found
-    {% endif %}
-    </div>
-
-      <div class="level-item">
-        <div class="field has-addons">
-          <p class="control">
-            <input class="input" type="text" placeholder="Search for an expert">
-          </p>
-          <p class="control">
-            <!-- search button just for show right now -->
-            <button class="button">
-              Search
-            </button>
-          </p>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Right side -->
-    <div class="level-right">
-        <p class="mr-6 is-size-4"> Experts by Topic </p>
-        <p class="has-text-left mr-6">
-            {% for topic in topics_list %}
-            <br> <br> <br> <br>
-            <a href= '/topic/{{topic.id}}'>{{topic}}</a>
-            {% endfor %}
-        </p>
-    </div>
-  </nav>
+</div>
 
 {% else %}
 Topics list not found
