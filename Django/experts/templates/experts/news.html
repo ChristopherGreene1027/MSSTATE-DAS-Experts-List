@@ -4,13 +4,7 @@
 {% if news_list %}
     {% for news in news_list %}
         <br>
-        {% if Image.news_Image %}
-            YES THERE IS AN IMAGE
-        {% else %}
-        There is no image to display
-        {% endif %} 
-
-        <img src="/media/images/{{ models.News.news_Image.url }}" />
+        <img src="{{ news.news_Image.url }}" />
         <br>
         <a href= '/expert/{{news.news_Expert.id}}'>{{news.news_Expert.expert_Name}}</a>
         <br>
