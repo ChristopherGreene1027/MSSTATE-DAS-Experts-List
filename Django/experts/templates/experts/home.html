@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+<link rel="stylesheet" href="home.css">
 {% block title %}Home{% endblock %}
 {% block content %}
 <h1 id="expertsHeading">Experts List</h1>
@@ -10,7 +11,7 @@
             <h3><a href= '/expert/{{expert.id}}'>{{expert.expert_Name}}</a></h3>
             {{expert.expert_Field}}
             <br>    
-        <!--topics listed (have not styled yet)-->
+        <!--expert's topic printed-->
             {% for topic in expert.expert_Topics.all %}
             <a href= '/topic/{{topic.id}}'>{{topic}}</a>
             {% endfor %}
