@@ -1,3 +1,7 @@
+#msulogo{
+    position: relative;
+    top: -250px;
+}
 .sidebar {
     width: 150px;
     position: absolute;
@@ -7,10 +11,37 @@
     overflow-y: auto;
     float: right;
     padding-top: 40px;
-    background-color: maroon;
+    background-color: lightblue;
     }
 .sidebar div {
     padding: 8px;
     font-size: 20px;
     display: block;
     }
+#expertsHeading{
+    padding: 20px;
+    text-align: left;
+    position: relative;
+    top: -250px
+}
+
+#expertsHeading2{
+    padding: 20px;
+    text-align: left;
+    position: relative;
+    top: -250px
+}
+
+#expertslisted{
+    position: relative;
+    padding: 20px;
+    left: 175px;
+    top: 300px;
+}
+
+#expertslisted-picture{
+    position: relative;
+    padding: 20px;
+    left: 25px;
+    top: 120px;
+}
