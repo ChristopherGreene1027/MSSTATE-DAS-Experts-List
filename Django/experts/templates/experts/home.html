@@ -4,9 +4,9 @@
 <h1 id="expertsHeading">Experts List</h1>
 <h2 id="expertsHeading2">All Experts</h2>
 {% if experts_list %}
+    {% for expert in experts_list %}
     <!--beginning of experts-listed-->
     <section id="expertslisted">
-        {% for expert in experts_list %}
             <h3><a href= '/expert/{{expert.id}}'>{{expert.expert_Name}}</a></h3>
             {{expert.expert_Field}}
             <br>    
@@ -17,12 +17,10 @@
     </section>
     <!--experts photo-->
     <section id="expertslisted-picture">
-        <br>
-        {{expert.expert_Picture}}
-        {% endfor %}
+        <img src = "{{expert.expert_Picture.url}}" alt="img" width="5%">
     </section>
     <!--end of experts-listed-->
-    
+    {% endfor %}
 {% else %}
 Experts list not found
 {% endif %}
