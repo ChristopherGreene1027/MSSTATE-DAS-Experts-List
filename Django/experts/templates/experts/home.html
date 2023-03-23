@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block title %}Home{% endblock %}
 {% block content %}
+<h1 id="expertsHeading">Experts List</h1>
+<h2 id="expertsHeading2">All Experts</h2>
 {% if experts_list %}
     <!--beginning of experts-listed-->
     <section id="expertslisted">
         {% for expert in experts_list %}
-        <br><br>
             <h3><a href= '/expert/{{expert.id}}'>{{expert.expert_Name}}</a></h3>
-            <br>
             {{expert.expert_Field}}
             <br>    
         <!--topics listed (have not styled yet)-->
