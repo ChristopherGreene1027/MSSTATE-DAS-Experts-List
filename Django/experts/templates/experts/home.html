@@ -19,7 +19,7 @@
     </section>
     <!--experts photo-->
     <section id="expertslisted-picture">
-        <img src = "{{expert.expert_Picture.url}}" alt="img" width="5%">
+        <img src = "{{expert.expert_Picture.url}}" alt="img" width="6%">
     </section>
     <!--end of experts-listed-->
     {% endfor %}
@@ -27,12 +27,18 @@
 Experts list not found
 {% endif %}
 {% if topics_list %}
-<div class="sidebar">
-    <div>Topics</div>
+
+<!--experts by topic-->
+<section id="topics-homepage">
+    <h2>Experts by topic</h2>
+    <ul>
     {% for topic in topics_list %}
-    <div><a href= '/topic/{{topic.id}}'>{{topic}}</a></div>
+        <li><a href= '/topic/{{topic.id}}'>{{topic}}</a></li> <br>
     {% endfor %}
-</div>
+    </ul>
+</section>
+
+
 
 {% else %}
 Topics list not found

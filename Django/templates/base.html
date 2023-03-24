@@ -8,10 +8,16 @@
 <body>
   <main>
     {% if user.is_authenticated %}
+      <!--admin page button-->
       {% if user.is_superuser %}
-      <a href="/admin">Admin Page</a><br>
+      <a class="button" href="/admin">Admin Page</a>
       {% endif %}
-      Currently Logged in as: {{ user.username }}
+
+      <!--currently logged in as-->
+      <section id="currentuser">
+      Currently logged in as: {{ user.username }}
+      </section>
+
       {% if request.path != "/" %}
       <br><a href="/">Home</a> 
       {% endif %}
