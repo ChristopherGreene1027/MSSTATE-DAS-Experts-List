@@ -1,26 +1,36 @@
 {% extends 'base.html' %}
 {% block title %}Home{% endblock %}
 {% block content %}
+<body>
 {% if expert %}
+    
     <br><br>
-    {{expert.expert_Name}}
+    <h1>{{expert.expert_Name}}</h1>
     <br>
-    Photo: {{expert.expert_Picture}}
+    <id="Picture">Photo: <img src = "{{expert.expert_Picture}}"> </id>
     <br>
-    Expert in {{expert.expert_Field}}
     <br>
-    Phone: {{expert.expert_Phone}}
     <br>
-    Email: {{expert.expert_Email}}
-    <br>
-    Achievements:
-    <br>
-    {{expert_Achievements}}
-    <br>
-    {% for topic in expert.expert_Topics.all %}
-        <a href= '/topic/{{topic.id}}'>{{topic}}</a>
-    {% endfor %}
+    <div class="info">
+        Expert in: {{expert.expert_Field}}
+        <br>
+        Phone: {{expert.expert_Phone}}
+        <br>
+        Email: {{expert.expert_Email}}
+        <br>
+        Achievements:
+        <br>
+        {{expert_Achievements}}
+        <br>
+        <p class="spacing">
+            <div id="Topic">Topics: </div> <br>
+            {% for topic in expert.expert_Topics.all %}
+                <a href= '/topic/{{topic.id}}'>{{topic}}</a>
+            {% endfor %}
+        </p>
+    </div>
 {% else %}
 Expert not found
 {% endif %}
 {% endblock %}
+</body>

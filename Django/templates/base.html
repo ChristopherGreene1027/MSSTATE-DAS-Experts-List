@@ -1,7 +1,9 @@
+<!--<!DOCTYPE html>-->
 <html>
-  {% load static %}
+ {% load static %}
   <link rel="stylesheet" href="{% static 'experts/style.css' %}">
 <head>
+  <!-- <link rel="stylesheet" href="style.css"> -->
   <meta charset="utf-8">
   <title>{% block title %}Base{% endblock %}</title>
 </head>
@@ -12,9 +14,44 @@
       <a href="/admin">Admin Page</a><br>
       {% endif %}
       Currently Logged in as: {{ user.username }}
+      <br>
       {% if request.path != "/" %}
-      <br><a href="/">Home</a> 
+      <br><a href="/">Home</a> <br> 
       {% endif %}
+      <br> 
+      <div class="SubmissionBox">
+        Expert Submission Form:<br>
+        <form>
+          <label for="fname"> First Name: </label>
+          <input type="text" id="fname" name="fname" value="">
+
+          <label for="lname"> Last Name: </label>
+          <input type="text" id="lname" name="lname" value="">
+
+          <label for="phone"> Phone Number: </label>
+          <input type="text" id="phone" name="phone" value="">
+
+          <label for="email"> Email: </label>
+          <input type="text" id="email" name="email" value="">
+
+          <br>
+          <br>
+
+          <label for="college"> College: </label>
+          <input type="text" id="college" name="college" value="">
+
+          <label for="field"> Field: </label>
+          <input type="text" id="field" name="field" value="">
+
+          <label for="topics"> Topics: </label>
+          <input type="text" id="topics" name="topics" value="">
+
+          <label for="achievements"> Achievements: </label>
+          <input type="text" id="achievements" name="achievements" value="">
+          <br> <br>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
     {% else %}
     {% endif %}
     {% block content %}

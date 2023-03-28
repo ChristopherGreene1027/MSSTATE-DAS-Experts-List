@@ -14,3 +14,28 @@
     font-size: 20px;
     display: block;
     }
+
+.info {
+    padding-left: 350px;
+    position: relative;
+    bottom: 55px;
+}
+
+#Topic{
+    text-decoration-line: underline;
+}
+
+p.spacing{
+    line-height: 0.5;
+}
+
+.SubmissionBox {
+    border-radius: 5px;
+    width: 1050px;
+    padding: 50px;
+    padding-left: 165px;
+    padding-right: 100px;
+    position: relative;
+    left: 360px;
+    background-color: grey;
+}
