@@ -2,16 +2,27 @@
 {% block title %}Home{% endblock %}
 {% block content %}
 {% if experts_list %}
-    {% for expert in experts_list %}
+    <!--beginning of experts-listed-->
+    <section id="expertslisted">
+        {% for expert in experts_list %}
         <br><br>
-        <a href= '/expert/{{expert.id}}'>{{expert.expert_Name}}</a>
-        <br>
-        {{expert.expert_Field}}
-        <br>
-        {% for topic in expert.expert_Topics.all %}
+            <h3><a href= '/expert/{{expert.id}}'>{{expert.expert_Name}}</a></h3>
+            <br>
+            {{expert.expert_Field}}
+            <br>    
+        <!--topics listed (have not styled yet)-->
+            {% for topic in expert.expert_Topics.all %}
             <a href= '/topic/{{topic.id}}'>{{topic}}</a>
+            {% endfor %}
+    </section>
+    <!--experts photo-->
+    <section id="expertslisted-picture">
+        <br>
+        {{expert.expert_Picture}}
         {% endfor %}
-    {% endfor %}
+    </section>
+    <!--end of experts-listed-->
+    
 {% else %}
 Experts list not found
 {% endif %}
@@ -27,3 +38,4 @@ Experts list not found
 Topics list not found
 {% endif %}
 {% endblock %}
+
