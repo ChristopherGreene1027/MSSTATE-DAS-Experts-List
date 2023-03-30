@@ -39,3 +39,11 @@
     top: -850px;
     left: 975px;
 }
+
+#searchbar{
+    position: relative;
+    padding: 20px;
+    float: right;
+    right: 750px;
+    top: -1200px;
+}

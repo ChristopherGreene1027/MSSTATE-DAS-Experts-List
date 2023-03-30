@@ -11,6 +11,7 @@ urlpatterns = [
     path('news',views.news,name='news'),
     path('expert/<int:expert_id>',views.expert,name='expert'),
     path('topic/<int:topic_id>',views.topic,name='topic'),
+    path('search',views.search,name='search'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
