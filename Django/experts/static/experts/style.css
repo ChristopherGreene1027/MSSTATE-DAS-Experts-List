@@ -1,6 +1,6 @@
 #msulogo{
     position: relative;
-    top: -480px;  /*-250*/
+     top: -480px;  /*-250*/
     margin-right: 400px;
 }
 .sidebar {
@@ -30,13 +30,6 @@
     left: 360px;
     background-color: grey;
 }  */
-
-#expertslisted-picture{
-    position: relative;
-    padding: 20px;
-    left: 25px;
-    top: 120px;
-}
 
 #login{
     position: relative;
