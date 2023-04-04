@@ -18,6 +18,12 @@ p.spacing{
 
 #Picture{
     position: relative;
-    top: 500px;
+    top: 700px;
 }
 
+#expertName{
+    text-align: left;
+    padding: 20px;
+    position: relative;
+    top: -250px;
+}

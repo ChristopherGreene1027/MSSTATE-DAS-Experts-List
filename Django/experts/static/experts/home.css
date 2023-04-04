@@ -11,3 +11,10 @@
     position: relative;
     top: -250px
 }
+
+#expertslisted-picture{
+    position: relative;
+    padding: 20px;
+    left: 25px;
+    top: 120px;
+}
