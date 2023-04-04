@@ -1,0 +1,23 @@
+.info {
+    padding-left: 500px;
+    position: relative;
+    bottom: 55px;
+}
+
+#Topic{
+    text-decoration-line: underline;
+}
+
+p.spacing{
+    line-height: 0.5;
+}
+
+#Achievements{
+    text-decoration-line: underline;
+}
+
+#Picture{
+    position: relative;
+    top: 500px;
+}
+
