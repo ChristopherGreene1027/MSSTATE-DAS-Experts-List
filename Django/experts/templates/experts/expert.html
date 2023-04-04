@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
-{% block title %}Home{% endblock %}
+{% load static %}
+  <link rel="stylesheet" href="{% static 'experts/bio.css' %}">
+{% block title %}Bio{% endblock %}
 {% block content %}
 <body>
 {% if expert %}
@@ -7,20 +9,26 @@
     <br><br>
     <h1>{{expert.expert_Name}}</h1>
     <br>
-    <id="Picture">Photo: <img src = "{{expert.expert_Picture}}"> </id>
+    <section id="Picture">
+        Photo: <img src = "{{expert.expert_Picture.url}}" alt="img" width="6%">
+    </section>
     <br>
     <br>
     <br>
     <div class="info">
         Expert in: {{expert.expert_Field}}
         <br>
+        <br>
         Phone: {{expert.expert_Phone}}
+        <br>
         <br>
         Email: {{expert.expert_Email}}
         <br>
+        <br>
         Achievements:
         <br>
-        {{expert_Achievements}}
+        <br>
+        {{expert.expert_Achievements}}
         <br>
         <p class="spacing">
             <div id="Topic">Topics: </div> <br>

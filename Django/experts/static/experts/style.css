@@ -1,6 +1,7 @@
 #msulogo{
     position: relative;
-    top: -250px;
+    top: -480px;  /*-250*/
+    margin-right: 400px;
 }
 .sidebar {
     width: 150px;
@@ -11,7 +12,7 @@
     overflow-y: auto;
     float: right;
     padding-top: 40px;
-    background-color: lightblue;
+    background-color: maroon;
     }
 .sidebar div {
     padding: 8px;
@@ -19,21 +20,7 @@
     display: block;
     }
 
-.info {
-    padding-left: 350px;
-    position: relative;
-    bottom: 55px;
-}
-
-#Topic{
-    text-decoration-line: underline;
-}
-
-p.spacing{
-    line-height: 0.5;
-}
-
-.SubmissionBox {
+/*.SubmissionBox {
     border-radius: 5px;
     width: 1050px;
     padding: 50px;
@@ -42,31 +29,17 @@ p.spacing{
     position: relative;
     left: 360px;
     background-color: grey;
-}  
-#expertsHeading{
-    padding: 20px;
-    text-align: left;
-    position: relative;
-    top: -250px
-}
-
-#expertsHeading2{
-    padding: 20px;
-    text-align: left;
-    position: relative;
-    top: -250px
-}
-
-#expertslisted{
-    position: relative;
-    padding: 20px;
-    left: 175px;
-    top: 300px;
-}
+}  */
 
 #expertslisted-picture{
     position: relative;
     padding: 20px;
     left: 25px;
     top: 120px;
+}
+
+#login{
+    position: relative;
+    left: 1050px;
+    top: 20px;
 }

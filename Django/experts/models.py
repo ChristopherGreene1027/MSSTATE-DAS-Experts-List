@@ -12,7 +12,7 @@ class Expert(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     expert_Name = models.TextField()
-    expert_Picture = models.ImageField()
+    expert_Picture = models.ImageField(upload_to="expertPic")
     expert_Field = models.TextField()
     class Colleges(models.TextChoices):
         ARTSSCIENCE = 'Arts and Sciences', _('Arts and Sciences')

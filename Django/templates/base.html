@@ -3,23 +3,24 @@
  {% load static %}
   <link rel="stylesheet" href="{% static 'experts/style.css' %}">
 <head>
-  <!-- <link rel="stylesheet" href="style.css"> -->
   <meta charset="utf-8">
   <title>{% block title %}Base{% endblock %}</title>
 </head>
 <body>
   <main>
-    {% if user.is_authenticated %}
-      {% if user.is_superuser %}
-      <a href="/admin">Admin Page</a><br>
-      {% endif %}
-      Currently Logged in as: {{ user.username }}
-      <br>
-      {% if request.path != "/" %}
-      <br><a href="/">Home</a> <br> 
-      {% endif %}
-      <br> 
-      <div class="SubmissionBox">
+    <section id="login">
+      {% if user.is_authenticated %}
+        {% if user.is_superuser %}
+        <a href="/admin">Admin Page</a><br>
+        {% endif %}
+        Currently Logged in as: {{ user.username }}
+        <br>
+        {% if request.path != "/" %}
+        <br><a href="/">Home</a> <br> 
+        {% endif %}
+        <br>
+    </section> 
+      <!--<div class="SubmissionBox">
         Expert Submission Form:<br>
         <form>
           <label for="fname"> First Name: </label>
@@ -51,7 +52,7 @@
           <br> <br>
           <input type="submit" value="Submit">
         </form>
-      </div>
+      </div>-->
     {% else %}
     {% endif %}
     {% block content %}
@@ -61,8 +62,6 @@
   <header id="msulogo">
     <img src="https://cdn01.its.msstate.edu/i/logos/cas/HORIZONTAL_WEB_maroon.svg" width="500px">
   </header>
-  <h1 id="expertsHeading">Experts List</h1>
-  <h2 id="expertsHeading2">All Experts</h2>
 
 </body>
 </html>

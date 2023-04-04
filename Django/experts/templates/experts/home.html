@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
+  <link rel="stylesheet" href="{% static 'experts/home.css' %}">
 {% block title %}Home{% endblock %}
 {% block content %}
+<h1 id="expertsHeading">Experts List</h1>
+<h2 id="expertsHeading2">All Experts</h2>
 {% if experts_list %}
     <!--beginning of experts-listed-->
     <section id="expertslisted">
