@@ -40,11 +40,12 @@ Experts list not found
 
 <!--search bar-->
 <section id="searchbar">
-<form class="example" method=POST action="{% url 'search' %}">
-    <input type="text" placeholder="Search.." name="search">
-    <button type="submit"><i class="button"></i></button>
-</form>
-</section>
+ <form class="search-form" method=POST action="{% url 'experts:search' %}"> 
+    {% csrf_token %}
+    <input type="text" class="search" placeholder="Expert or topic" name="searched">
+    <input type="submit" name="submit" class="submit" value="Search">
+  </form>
+</section> 
 
 {% else %}
 Topics list not found

@@ -3,7 +3,14 @@ from django.shortcuts import get_object_or_404, render
 from .models import Expert, Topic, News
 
 def search(request):
-    return render(request,'experts/search.html',{})
+    if request.method == "POST":
+        searched = request.POST['searched']
+        expertsearched = Expert.objects.filter(expert_Name__contains=searched)
+        return render(request,'experts/search.html',{'searched':searched,
+                                                     'expertsearched':expertsearched})
+    else:
+        return render(request,'experts/search.html',{})
+
 
 
 def home(request):

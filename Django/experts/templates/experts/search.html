@@ -1,6 +1,16 @@
 {% extends 'base.html' %}
-
 {% block content %}
-    <h1> You searched for </h1>
+{% load static %}
+<link rel="stylesheet" href="{% static 'experts/search.css' %}">
+    {% if searched %}
+        <h1> You searched for: {{searched}} </h1>
+        <br/>
+        {% for expert in expertsearched %}
+            {{ expertsearched }} <br/>
+        {% endfor %}
+    {% else %}
+        <h1> You must enter an expert or topic. </h1>
+    {% endif %}
+    
 
 {% endblock %}

@@ -41,9 +41,36 @@
 }
 
 #searchbar{
+    font-family: Arial, Helvetica, sans-serif;
     position: relative;
     padding: 20px;
     float: right;
-    right: 750px;
-    top: -1200px;
+    right: 480px;
+    top: -1350px;
 }
+
+.search-form{
+    width: 400px;
+    margin: auto;
+    margin-top: 250px;
+  }
+  
+  input {
+    padding: 4px 10px;
+    border: 0;
+    font-size: 16px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgray;
+  }
+  
+  .search {
+    width: 75%;
+  }
+  
+  .submit {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 70px;
+    background-color: #5D1725;
+    color: #ffffff;
+  }

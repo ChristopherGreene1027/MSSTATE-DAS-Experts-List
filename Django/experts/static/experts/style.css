@@ -2,7 +2,7 @@
     position: absolute;
 }
 .button{
-    background-color: #5D1725; /* Green */
+    background-color: #5D1725;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -13,7 +13,7 @@
     position: relative;
     float: right;
     right: 100px;
-    top: 100px;
+    top: 50px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -23,5 +23,5 @@
     padding: 20px;
     float: right;
     right: 110px;
-    top: 100px;
+    top: 50px;
 }
