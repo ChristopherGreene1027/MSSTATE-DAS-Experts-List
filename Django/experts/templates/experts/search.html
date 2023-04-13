@@ -3,14 +3,40 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'experts/search.css' %}">
     {% if searched %}
-        <h1> You searched for: {{searched}} </h1>
+        <!--expert searched results-->
+        <h2> You searched for: {{searched}} </h2>
         <br/>
         {% for expert in expertsearched %}
-            {{ expertsearched }} <br/>
+            <section id="expertsearched">
+            <a href= '/expert/{{expert.id}}'>{{expert.expert_Name}}</a> <br/>
+            {{expert.expert_Field}} <br> 
+            </section>
+
+            <section id="expertsearchedphoto">
+            <img src = "{{expert.expert_Picture.url}}" alt="img" width="6%"> <br>
+            </section>
+        {% endfor %}
+
+        <!--topic searched results-->
+        {% for topic in topicsearched %}
+        <section id="topicsearchresults">
+        <ul>
+            <li><a href= '/topic/{{topic.id}}'>{{topic.topic_Name}}</a></li><br>
+        </ul>
+        </section>     
         {% endfor %}
     {% else %}
-        <h1> You must enter an expert or topic. </h1>
+        <h2> You must enter an expert or topic. </h2>
     {% endif %}
+
+    <!--search bar to search again-->
+    <section id="searchbar">
+        <form class="search-form" method=POST action="{% url 'experts:search' %}"> 
+        {% csrf_token %}
+        <input type="text" class="search" placeholder="Expert or topic" name="searched">
+        <input type="submit" name="submit" class="submit" value="Search">
+        </form>
+    </section> 
     
 
 {% endblock %}

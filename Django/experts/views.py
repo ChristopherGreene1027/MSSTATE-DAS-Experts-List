@@ -6,8 +6,10 @@ def search(request):
     if request.method == "POST":
         searched = request.POST['searched']
         expertsearched = Expert.objects.filter(expert_Name__contains=searched)
+        topicsearched = Topic.objects.filter(topic_Name__contains=searched)
         return render(request,'experts/search.html',{'searched':searched,
-                                                     'expertsearched':expertsearched})
+                                                     'expertsearched':expertsearched,
+                                                     'topicsearched':topicsearched})
     else:
         return render(request,'experts/search.html',{})
 
