@@ -1,17 +1,23 @@
 {% extends 'base.html' %}
 {% block title %}Home{% endblock %}
 {% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'experts/news.css' %}">
+<h1 id="newsHeading">News Articles</h1>
+<h2 id="smallnewsHeading">News</h2>
+<div class="lineBreak"></div>
+<div class="smallBreak"></div>
+<br>
 {% if news_list %}
     {% for news in news_list %}
-        <br>
-        <img src="{{ news.news_Image.url }}" />
-        <br>
-        <a href= '/expert/{{news.news_Expert.id}}'>{{news.news_Expert.expert_Name}}</a>
-        <br>
-        <a href = '{{news.news_Link}}'>{{news.news_Link_Description}}</a>
-        <br>
-        {{news_Description}}
-        <br>
+
+        <section id="newsList">
+            <img id="newslisted-picture" src="{{ news.news_Image.url }}" />
+            <h3 id="newsTitle"><a href='{{news.news_Link}}'>{{news.news_Name}}</a></h3>
+            <a id="newsExpert" href= '{{news.news_Expert}}'>{{news.news_Expert.expert_Name}}</a>
+            <p id="newsDescription">{{news.news_Description}}</p>
+        </section>
+
     {% endfor %}
 {% else %}
 News list not found
@@ -26,4 +32,19 @@ News list not found
 {% else %}
 Topics list not found
 {% endif %}
+{% if topics_list %}
+
+<!--Shamelessly Copied from Ferrin-->
+    <section id="topics-newspage">
+        <h2 id="expertsTopic">Experts by topic</h2>
+        <ul>
+        {% for topic in topics_list %}
+            <li><a href= '/topic/{{topic.id}}'>{{topic}}</a></li> <br>
+        {% endfor %}
+    </ul>
+</section>
+
+{% else %}
+Topics list not found
+{%endif %}
 {% endblock %}
