@@ -2,6 +2,17 @@ from urllib import request
 from django.shortcuts import get_object_or_404, render
 from .models import Expert, Topic, News
 
+def search(request):
+    if request.method == "POST":
+        searched = request.POST['searched']
+        expertsearched = Expert.objects.filter(expert_Name__contains=searched)
+        topicsearched = Topic.objects.filter(topic_Name__contains=searched)
+        return render(request,'experts/search.html',{'searched':searched,
+                                                     'expertsearched':expertsearched,
+                                                     'topicsearched':topicsearched})
+    else:
+        return render(request,'experts/search.html',{})
+
 def home(request):
     experts_list = Expert.objects.order_by('-expert_Name')
     topics_list = Topic.objects.order_by('-topic_Name')
