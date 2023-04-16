@@ -4,10 +4,10 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'experts/news.css' %}">
 <h1 id="newsHeading">News Articles</h1>
-<h2 id="smallnewsHeading">News</h2>
 <div class="lineBreak"></div>
-<div class="smallBreak"></div>
+<h2 id="smallnewsHeading">News</h2>
 <br>
+
 {% if news_list %}
     {% for news in news_list %}
 
@@ -22,21 +22,13 @@
 {% else %}
 News list not found
 {% endif %}
-{% if topics_list %}
-<div class="sidebar">
-    <div>Topics</div>
-    {% for topic in topics_list %}
-    <div><a href= '/topic/{{topic.id}}'>{{topic}}</a></div>
-    {% endfor %}
-</div>
-{% else %}
-Topics list not found
-{% endif %}
+
 {% if topics_list %}
 
 <!--Shamelessly Copied from Ferrin-->
     <section id="topics-newspage">
         <h2 id="expertsTopic">Experts by topic</h2>
+        <br>
         <ul>
         {% for topic in topics_list %}
             <li><a href= '/topic/{{topic.id}}'>{{topic}}</a></li> <br>
@@ -47,4 +39,15 @@ Topics list not found
 {% else %}
 Topics list not found
 {%endif %}
+
+<h2 id="smallsearchHeading">Search</h2>
+<!--Ferrin's Searchbar-->
+<section id="searchbar">
+    <form class="search-form" method=POST action="{% url 'experts:search' %}"> 
+    {% csrf_token %}
+    <input type="text" class="search" placeholder="Expert or topic" name="searched">
+    <input type="submit" name="submit" class="submit" value="Search">
+    </form>
+</section>
+
 {% endblock %}
