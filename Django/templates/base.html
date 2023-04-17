@@ -7,16 +7,16 @@
 </head>
 <body>
   <main>
-      {% if user.is_authenticated %}
-        {% if user.is_superuser %}
-        <a id="admin" href="/admin">Admin Page</a><br>
-        {% endif %}
-        <section id ="currentUser">Currently Logged in as: {{ user.username }} </section>
-        <br>
-        {% if request.path != "/" %}
-        <br><a id="home" href="/">Home</a> <br> 
-        {% endif %}
-        <br>
+    {% if user.is_authenticated %}
+      {% if user.is_superuser %}
+      <a id="admin" href="/admin">Admin Page</a><br>
+      {% endif %}
+      <section id ="currentUser">Currently Logged in as: {{ user.username }} </section>
+      <br>
+      {% if request.path != "/" %}
+      <br><a id="home" href="/">Home</a> <br> 
+      {% endif %}
+      <br>
     {% else %}
     {% endif %}
     <header id="msulogo">

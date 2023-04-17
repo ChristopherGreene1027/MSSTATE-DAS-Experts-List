@@ -1,6 +1,7 @@
 #msulogo{
     position: absolute;
     left: 20px;
+    top: -7px;
 }
 
 /*.SubmissionBox {
@@ -14,20 +15,20 @@
     background-color: grey;
 }  */
 
-/*#admin{
+#admin{
     position: relative;
-    left: 1000px;
-    top: -20px;
-}*/
+    left: 1185px;
+    top: 5px;
+}
 
 #currentUser{
     position: relative;
-    right: 200px;
+    right: -1100px;
     top: 20px;
 }
 
-/*#home{
+#home{
     position: relative;
-    left: 1000px;
-    top: -20px;
-}*/
+    left: 1100px;
+    top: -70px;
+}

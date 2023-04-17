@@ -9,6 +9,7 @@
         <img src = "{{expert.expert_Picture.url}}" alt="img" width="12%">
     </section>
     <br>
+    <hr class="solid">
     <br>
     <br>
     <div class="info">
@@ -26,9 +27,13 @@
         {{expert.expert_Achievements}}
         <br>
         <p class="spacing">
-            <h2 id="Topic">Topics: </h2> <br>
+            <h2 id="Topic">Topics: </h2>
             {% for topic in expert.expert_Topics.all %}
-                <a href= '/topic/{{topic.id}}'>{{topic}}</a>
+            <section id="topicList">
+                <ul>
+                <li><a href= '/topic/{{topic.id}}'>{{topic}}</a></li>
+                </ul>
+            </section>
             {% endfor %}
         </p>
     </div>
