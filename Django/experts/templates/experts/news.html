@@ -14,7 +14,9 @@
         <section id="newsList">
             <img id="newslisted-picture" src="{{ news.news_Image.url }}" />
             <h3 id="newsTitle"><a href='{{news.news_Link}}'>{{news.news_Name}}</a></h3>
-            <a id="newsExpert" href= '{{news.news_Expert}}'>{{news.news_Expert.expert_Name}}</a>
+            {% for expert in news.news_Expert.all %}
+            <a id="newsExpert" href= '{{news.news_Expert}}'>{{expert.expert_Name}}</a>
+            {% endfor %}
             <p id="newsDescription">{{news.news_Description}}</p>
         </section>
 
