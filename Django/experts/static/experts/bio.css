@@ -1,13 +1,15 @@
 #expertName{
     position: relative;
-    bottom: 300px;
+    bottom: -170px;
+    left: 600px;
+    font-size: 45px;
 }
 
 .info {
-    padding-left: 600px;
+    padding-left: 1300px;
     position: relative;
     top: -120px;
-    right: 700px;
+    right: 695px;
 }
 
 #Topic{
@@ -24,6 +26,6 @@ p.spacing{
 
 #Picture{
     position: relative;
-    top: 200px;
-    right: 820px;
+    top: 65px;
+    right: -220px;
 }
