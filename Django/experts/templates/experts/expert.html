@@ -1,16 +1,12 @@
 {% extends 'base.html' %}
-{% load static %}
-  <link rel="stylesheet" href="{% static 'experts/bio.css' %}">
 {% block title %}Bio{% endblock %}
 {% block content %}
-<body>
+{% load static %}
+  <link rel="stylesheet" href="{% static 'experts/bio.css' %}">
 {% if expert %}
-    
-    <br><br>
     <h1 id="expertName">{{expert.expert_Name}}</h1>
-    <br>
     <section id="Picture">
-        Photo: <img src = "{{expert.expert_Picture.url}}" alt="img" width="6%">
+        <img src = "{{expert.expert_Picture.url}}" alt="img" width="12%">
     </section>
     <br>
     <br>
@@ -25,13 +21,12 @@
         Email: {{expert.expert_Email}}
         <br>
         <br>
-        Achievements:
-        <br>
+        <h2 id="Achievements">Achievements: </h2>
         <br>
         {{expert.expert_Achievements}}
         <br>
         <p class="spacing">
-            <div id="Topic">Topics: </div> <br>
+            <h2 id="Topic">Topics: </h2> <br>
             {% for topic in expert.expert_Topics.all %}
                 <a href= '/topic/{{topic.id}}'>{{topic}}</a>
             {% endfor %}
@@ -41,4 +36,3 @@
 Expert not found
 {% endif %}
 {% endblock %}
-</body>

@@ -1,6 +1,5 @@
-<!--<!DOCTYPE html>-->
 <html>
- {% load static %}
+  {% load static %}
   <link rel="stylesheet" href="{% static 'experts/style.css' %}">
 <head>
   <meta charset="utf-8">
@@ -20,48 +19,13 @@
         {% endif %}
         <br>
     </section> 
-      <!--<div class="SubmissionBox">
-        Expert Submission Form:<br>
-        <form>
-          <label for="fname"> First Name: </label>
-          <input type="text" id="fname" name="fname" value="">
-
-          <label for="lname"> Last Name: </label>
-          <input type="text" id="lname" name="lname" value="">
-
-          <label for="phone"> Phone Number: </label>
-          <input type="text" id="phone" name="phone" value="">
-
-          <label for="email"> Email: </label>
-          <input type="text" id="email" name="email" value="">
-
-          <br>
-          <br>
-
-          <label for="college"> College: </label>
-          <input type="text" id="college" name="college" value="">
-
-          <label for="field"> Field: </label>
-          <input type="text" id="field" name="field" value="">
-
-          <label for="topics"> Topics: </label>
-          <input type="text" id="topics" name="topics" value="">
-
-          <label for="achievements"> Achievements: </label>
-          <input type="text" id="achievements" name="achievements" value="">
-          <br> <br>
-          <input type="submit" value="Submit">
-        </form>
-      </div>-->
     {% else %}
     {% endif %}
+    <header id="msulogo">
+      <img src="https://cdn01.its.msstate.edu/i/logos/cas/HORIZONTAL_WEB_maroon.svg" width="500px">
+    </header>
     {% block content %}
     {% endblock %}
   </main>
-  <!--starting my work outside of main for right now-->
-  <header id="msulogo">
-    <img src="https://cdn01.its.msstate.edu/i/logos/cas/HORIZONTAL_WEB_maroon.svg" width="500px">
-  </header>
-
 </body>
 </html>

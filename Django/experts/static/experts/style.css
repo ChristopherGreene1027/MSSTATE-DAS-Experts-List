@@ -1,24 +1,7 @@
 #msulogo{
-    position: relative;
-     top: -480px;  /*-250*/
-    margin-right: 400px;
-}
-.sidebar {
-    width: 150px;
     position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    overflow-y: auto;
-    float: right;
-    padding-top: 40px;
-    background-color: maroon;
-    }
-.sidebar div {
-    padding: 8px;
-    font-size: 20px;
-    display: block;
-    }
+    left: -1000px;
+}
 
 /*.SubmissionBox {
     border-radius: 5px;
