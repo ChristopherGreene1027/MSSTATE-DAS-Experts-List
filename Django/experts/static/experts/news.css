@@ -38,13 +38,14 @@
 
 #newsTitle {
     position: absolute; 
+    font-size: 20px;
     top: 1.06vh; /*10*/
     left: 8.33vw; /*160*/
 }
 
 #newsExpert {
     position: absolute;
-    top: 2.13vh; /*20*/
+    top: 4vh; /*20*/
     left: 8.33vw; /*168*/
 }
 
