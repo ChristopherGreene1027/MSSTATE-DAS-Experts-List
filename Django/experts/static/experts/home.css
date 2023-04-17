@@ -21,6 +21,7 @@
     padding: 4vh;
     left: 25vh;
     top: 5vh;
+    z-index: 2;
 }
 
 #expertslisted-picture{
@@ -35,18 +36,20 @@
     font-family: Arial, Helvetica, sans-serif;
     padding: 4vh;
     text-align: left;
-    position: relative;
-    top: -145vh;
-    left: 140vh;
+    position: absolute;
+    top: 22vh;
+    left: 100vh;
+    z-index: 3;
 }
 
 #searchbar{
     font-family: Arial, Helvetica, sans-serif;
-    position: relative;
+    position: absolute;
     padding: 5vh;
     float: right;
-    right: 12vh;
-    top: -215vh;
+    right: 14vh;
+    top: -19vh;
+    z-index: 1;
 }
 
 .search-form{

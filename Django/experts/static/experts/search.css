@@ -33,11 +33,11 @@ h2{
 
 #searchbar{
     font-family: Arial, Helvetica, sans-serif;
-    position: relative;
+    position: absolute;
     padding: 5vh;
     float: right;
     right: 15vh;
-    top: -65vh;
+    top: -15vh;
 }
 
 .search-form{
