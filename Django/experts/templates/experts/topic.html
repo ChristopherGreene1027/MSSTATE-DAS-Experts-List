@@ -26,9 +26,14 @@
     {% endif %}
 
 <!--topic heading - in progress -->
-<h2 id="expertresults"> Experts found for: {{topic}}</h2>
-    
-
+<div>
+    <h2 id="expertresults"> Experts found for: {{topic_object.topic_Name}}</h2>
+    {% for expert in experts_list %}
+        {% if topic_object in expert.expert_Topics.all %}
+            <h3><a href= '/expert/{{expert.id}}'>{{expert.expert_Name}}</a></h3>       
+        {% endif %}
+    {% endfor %}
+</div>
 {% else %}
 Experts list not found
 {% endif %}
