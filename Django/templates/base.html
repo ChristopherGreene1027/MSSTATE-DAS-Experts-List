@@ -18,9 +18,11 @@
       Currently logged in as: {{ user.username }}
       </section>
 
+      <!--home button-->
       {% if request.path != "/" %}
-      <br><a href="/">Home</a> 
+      <br><a class="button" href="/">Home</a> 
       {% endif %}
+
     {% else %}
     {% endif %}
     <!--MSU logo header-->
