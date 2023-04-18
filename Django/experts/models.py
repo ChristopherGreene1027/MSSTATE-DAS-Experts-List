@@ -7,7 +7,9 @@ class Topic(models.Model):
     topic_Name = models.TextField()
     def __str__(self):
        return self.topic_Name
-
+class Link(models.Model):
+    name = models.TextField()
+    url = models.URLField()
 class Expert(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -29,9 +31,10 @@ class Expert(models.Model):
     expert_Email = models.EmailField()
     expert_Topics = models.ManyToManyField(Topic)
     expert_Achievements = models.TextField()
+    expert_Links = models.ManyToManyField(Link)
     def __str__(self):
        return self.expert_Name
-
+    
 class News(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

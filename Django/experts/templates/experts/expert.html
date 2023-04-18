@@ -19,8 +19,14 @@
         Phone: {{expert.expert_Phone}}
         <br>
         <br>
-        Email: {{expert.expert_Email}}
+        Email: <a href = "mailto:{{expert.expert_Email}}">{{expert.expert_Email}}</a>
         <br>
+        {% for link in expert.expert_Links.all %}
+        <section id="linkList">
+            <br>
+            <a href= '{{link.url}}'>{{link.name}}</a>
+        </section>
+        {% endfor %}
         <br>
         <h2 id="Achievements">Achievements: </h2>
         <br>
