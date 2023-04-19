@@ -10,7 +10,9 @@
     {% if user.is_authenticated %}
       <!--admin page button-->
       {% if user.is_superuser %}
+      <section id ="adminbutton">
         <a class="button" href="/admin">Admin Page</a>
+      </section>  
       {% endif %}
 
       <!--currently logged in as-->
@@ -20,7 +22,9 @@
 
       <!--home button-->
       {% if request.path != "/" %}
-      <br><a class="button" href="/">Home</a> 
+        <section id="homebutton">
+        <br><a class="button" href="/">Home</a> 
+        </section>
       {% endif %}
 
     {% else %}

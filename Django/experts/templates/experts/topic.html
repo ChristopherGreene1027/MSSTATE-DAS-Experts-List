@@ -3,6 +3,10 @@
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'experts/topic.css' %}">
+
+<!--topic heading-->
+<h2 id="topicsheading"> Experts in {{topic_object.topic_Name}}</h2>
+
 {% if experts_list %}
     {% if topic_object %}
         {% for expert in experts_list %}
@@ -25,15 +29,8 @@
         {% endfor %}
     {% endif %}
 
-<!--topic heading - in progress -->
-<div>
-    <h2 id="expertresults"> Experts found for: {{topic_object.topic_Name}}</h2>
-    {% for expert in experts_list %}
-        {% if topic_object in expert.expert_Topics.all %}
-            <h3><a href= '/expert/{{expert.id}}'>{{expert.expert_Name}}</a></h3>       
-        {% endif %}
-    {% endfor %}
-</div>
+
+    
 {% else %}
 Experts list not found
 {% endif %}
