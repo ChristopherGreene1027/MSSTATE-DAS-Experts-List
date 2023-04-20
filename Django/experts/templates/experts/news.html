@@ -1,27 +1,55 @@
 {% extends 'base.html' %}
 {% block title %}Home{% endblock %}
 {% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'experts/news.css' %}">
+<h1 id="newsHeading">News Articles</h1>
+<div class="lineBreak"></div>
+<h2 id="smallnewsHeading">News</h2>
+<br>
+
 {% if news_list %}
     {% for news in news_list %}
-        <br><br>
-        <a href= '/expert/{{news.news_Expert.id}}'>{{news.news_Expert.expert_Name}}</a>
-        <br>
-        <a href = '{{news.news_Link}}'>{{news.news_Link_Description}}</a>
-        <br>
-        {{news_Description}}
-        <br>
+
+        <section id="newsList">
+            <img id="newslisted-picture" src="{{ news.news_Image.url }}" />
+            <h3 id="newsTitle"><a href='{{news.news_Link}}'>{{news.news_Name}}</a></h3>
+            {% for expert in news.news_Expert.all %}
+            <a id="newsExpert" href= 'expert/{{expert.id}}'>{{expert.expert_Name}}</a>
+            {% endfor %}
+            <p id="newsDescription">{{news.news_Description}}</p>
+        </section>
+
     {% endfor %}
 {% else %}
 News list not found
 {% endif %}
+
 {% if topics_list %}
-<div class="sidebar">
-    <div>Topics</div>
-    {% for topic in topics_list %}
-    <div><a href= '/topic/{{topic.id}}'>{{topic}}</a></div>
-    {% endfor %}
-</div>
+
+<!--Shamelessly Copied from Ferrin-->
+    <section id="topics-newspage">
+        <h2 id="expertsTopic">Experts by topic</h2>
+        <br>
+        <ul>
+        {% for topic in topics_list %}
+            <li><a href= '/topic/{{topic.id}}'>{{topic}}</a></li> <br>
+        {% endfor %}
+    </ul>
+</section>
+
 {% else %}
 Topics list not found
-{% endif %}
+{%endif %}
+
+<h2 id="smallsearchHeading">Search</h2>
+<!--Ferrin's Searchbar-->
+<section id="searchbar">
+    <form class="search-form" method=POST action="{% url 'experts:search' %}"> 
+    {% csrf_token %}
+    <input type="text" class="search" placeholder="Expert or topic" name="searched">
+    <input type="submit" name="submit" class="submit" value="Search">
+    </form>
+</section>
+
 {% endblock %}

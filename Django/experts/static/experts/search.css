@@ -1,0 +1,67 @@
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5vh;
+    text-align: left;
+    position: relative;
+    top: 10vh;
+}
+
+#topicsearchresults{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5vh;
+    text-align: left;
+    position: relative;
+    top: 1vh;
+}
+
+#expertsearched{
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    text-align: left;
+    padding: 5vh;
+    left: 25vh;
+    top: 7vh;
+}
+
+#expertsearchedphoto{
+    position: relative;
+    text-align: left;
+    padding: 5vh;
+    left: 5vh;
+    top: -7vh;
+}
+
+#searchbar{
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    padding: 5vh;
+    float: right;
+    right: 15vh;
+    top: -65vh;
+}
+
+.search-form{
+    width: 50vh;
+    margin: auto;
+    margin-top: 35vh;
+  }
+  
+  input {
+    padding: .5vh 1vh;
+    border: 0;
+    font-size: 16px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgray;
+  }
+  
+  .search {
+    width: 35vh;
+  }
+  
+  .submit {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 10vh;
+    background-color: #5D1725;
+    color: #ffffff;
+  }
