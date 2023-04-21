@@ -21,7 +21,10 @@ def home(request):
 
 def expert(request, expert_id):
     expert = get_object_or_404(Expert, pk=expert_id)
-    return render(request, 'experts/expert.html',{'expert':expert})
+    #expertImg = Expert.objects.expert_Picture()
+    #context = {'expertImg': expertImg}
+    context = {'expert' : expert}
+    return render(request, 'experts/expert.html', context)
 
 def topic(request, topic_id):
     experts_list = Expert.objects.order_by('-expert_Name')

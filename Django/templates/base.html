@@ -9,23 +9,21 @@
   <main>
     {% if user.is_authenticated %}
       {% if user.is_superuser %}
-      <a href="/admin">Admin Page</a><br>
+      <a id="admin" href="/admin">Admin Page</a><br>
       {% endif %}
-      Currently Logged in as: {{ user.username }}
+      <section id ="currentUser">Currently Logged in as: {{ user.username }} </section>
+      <br>
       {% if request.path != "/" %}
-      <br><a href="/">Home</a> 
+      <br><a id="home" href="/">Home</a> <br> 
       {% endif %}
+      <br>
     {% else %}
     {% endif %}
+    <header id="msulogo">
+      <img src="https://cdn01.its.msstate.edu/i/logos/cas/HORIZONTAL_WEB_maroon.svg" width="500px">
+    </header>
     {% block content %}
     {% endblock %}
   </main>
-  <!--starting my work outside of main for right now-->
-  <header id="msulogo">
-    <img src="https://cdn01.its.msstate.edu/i/logos/cas/HORIZONTAL_WEB_maroon.svg" width="500px">
-  </header>
-  <h1 id="expertsHeading">Experts List</h1>
-  <h2 id="expertsHeading2">All Experts</h2>
-
 </body>
 </html>

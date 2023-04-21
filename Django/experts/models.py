@@ -8,12 +8,14 @@ class Topic(models.Model):
     topic_Name = models.TextField()
     def __str__(self):
        return self.topic_Name
-
+class Link(models.Model):
+    name = models.TextField()
+    url = models.URLField()
 class Expert(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     expert_Name = models.TextField()
-    expert_Picture = models.ImageField()
+    expert_Picture = models.ImageField(upload_to="expertPic")
     expert_Field = models.TextField()
     class Colleges(models.TextChoices):
         ARTSSCIENCE = 'Arts and Sciences', _('Arts and Sciences')
@@ -30,9 +32,10 @@ class Expert(models.Model):
     expert_Email = models.EmailField()
     expert_Topics = models.ManyToManyField(Topic)
     expert_Achievements = models.TextField()
+    expert_Links = models.ManyToManyField(Link)
     def __str__(self):
        return self.expert_Name
-
+    
 class News(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

@@ -1,47 +1,34 @@
 #msulogo{
-    position: relative;
-    top: -250px;
-}
-.sidebar {
-    width: 150px;
     position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    overflow-y: auto;
-    float: right;
-    padding-top: 40px;
-    background-color: lightblue;
-    }
-.sidebar div {
-    padding: 8px;
-    font-size: 20px;
-    display: block;
-    }
-#expertsHeading{
-    padding: 20px;
-    text-align: left;
-    position: relative;
-    top: -250px
+    left: 20px;
+    top: -7px;
 }
 
-#expertsHeading2{
-    padding: 20px;
-    text-align: left;
+/*.SubmissionBox {
+    border-radius: 5px;
+    width: 1050px;
+    padding: 50px;
+    padding-left: 165px;
+    padding-right: 100px;
     position: relative;
-    top: -250px
+    left: 360px;
+    background-color: grey;
+}  */
+
+#admin{
+    position: relative;
+    left: 1185px;
+    top: 5px;
 }
 
-#expertslisted{
+#currentUser{
     position: relative;
-    padding: 20px;
-    left: 175px;
-    top: 300px;
+    right: -1100px;
+    top: 20px;
 }
 
-#expertslisted-picture{
+#home{
     position: relative;
-    padding: 20px;
-    left: 25px;
-    top: 120px;
+    left: 1100px;
+    top: -70px;
 }
