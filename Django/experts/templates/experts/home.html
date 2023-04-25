@@ -2,42 +2,51 @@
 {% block title %}Home{% endblock %}
 {% block content %}
 {% load static %}
-  <link rel="stylesheet" href="{% static 'experts/home.css' %}">
+<link rel="stylesheet" href="{% static 'experts/home.css' %}">
 <body>
 <h1 id="expertsHeading">Experts List</h1>
 <h2 id="expertsHeading2">All Experts</h2>
 {% if experts_list %}
+    {% for expert in experts_list %}
     <!--beginning of experts-listed-->
     <section id="expertslisted">
-        {% for expert in experts_list %}
-        <br><br>
             <h3><a href= '/expert/{{expert.id}}'>{{expert.expert_Name}}</a></h3>
-            <br>
             {{expert.expert_Field}}
             <br>    
-        <!--topics listed (have not styled yet)-->
+        <!--expert's topic printed-->
             {% for topic in expert.expert_Topics.all %}
             <a href= '/topic/{{topic.id}}'>{{topic}}</a>
             {% endfor %}
     </section>
     <!--experts photo-->
     <section id="expertslisted-picture">
-        <br>
-        {{expert.expert_Picture}}
-        {% endfor %}
+        <img src = "{{expert.expert_Picture.url}}" alt="img" width="6%">
     </section>
     <!--end of experts-listed-->
-    
+    {% endfor %}
 {% else %}
 Experts list not found
 {% endif %}
 {% if topics_list %}
-<div class="sidebar">
-    <div>Topics</div>
+
+<!--experts by topic-->
+<section id="topics-homepage">
+    <h2>Experts by topic</h2>
+    <ul>
     {% for topic in topics_list %}
-    <div><a href= '/topic/{{topic.id}}'>{{topic}}</a></div>
+        <li><a href= '/topic/{{topic.id}}'>{{topic}}</a></li> <br>
     {% endfor %}
-</div>
+    </ul>
+</section>
+
+<!--search bar-->
+<section id="searchbar">
+ <form class="search-form" method=POST action="{% url 'experts:search' %}"> 
+    {% csrf_token %}
+    <input type="text" class="search" placeholder="Expert or topic" name="searched">
+    <input type="submit" name="submit" class="submit" value="Search">
+  </form>
+</section> 
 
 {% else %}
 Topics list not found

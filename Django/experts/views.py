@@ -12,7 +12,6 @@ def search(request):
                                                      'topicsearched':topicsearched})
     else:
         return render(request,'experts/search.html',{})
-
 def home(request):
     experts_list = Expert.objects.order_by('-expert_Name')
     topics_list = Topic.objects.order_by('-topic_Name')

@@ -1,21 +1,36 @@
 {% extends 'base.html' %}
 {% block title %}Home{% endblock %}
 {% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'experts/topic.css' %}">
+
+<!--topic heading-->
+<h2 id="topicsheading"> Experts in {{topic_object.topic_Name}}</h2>
+
 {% if experts_list %}
     {% if topic_object %}
         {% for expert in experts_list %}
             {% if topic_object in expert.expert_Topics.all %}
                 <br><br>
-                <a href= '/expert/{{expert.id}}'>{{expert.expert_Name}}</a>
-                <br>
-                {{expert.expert_Field}}
-                <br>
-                {% for topic in expert.expert_Topics.all %}
+                <section id="expertslisted-topicspage">
+                    <h3><a href= '/expert/{{expert.id}}'>{{expert.expert_Name}}</a></h3>
+                    <br>
+                    {{expert.expert_Field}}
+                    <br>
+                    {% for topic in expert.expert_Topics.all %}
                     <a href= '/topic/{{topic.id}}'>{{topic}}</a>
-                {% endfor %}
+                    {% endfor %}
+                </section>
+                <!--experts photo-->
+                <section id="expertslisted-topicspicture">
+                    <img src = "{{expert.expert_Picture.url}}" alt="img" width="6%">
+                </section>
             {% endif %}
         {% endfor %}
     {% endif %}
+
+
+    
 {% else %}
 Experts list not found
 {% endif %}
