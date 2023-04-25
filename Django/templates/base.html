@@ -10,26 +10,16 @@
     {% if user.is_authenticated %}
       <!--admin page button-->
       {% if user.is_superuser %}
-      <section id ="adminbutton">
-        <a class="button" href="/admin">Admin Page</a>
-      </section>  
+      <a id="admin" href="/admin">Admin Page</a><br>
       {% endif %}
-
-      <!--currently logged in as-->
-      <section id="currentuser">
-      Currently logged in as: {{ user.username }}
-      </section>
-
-      <!--home button-->
+      <section id ="currentUser">Currently Logged in as: {{ user.username }} </section>
+      <br>
       {% if request.path != "/" %}
-        <section id="homebutton">
-        <br><a class="button" href="/">Home</a> 
-        </section>
+      <br><a id="home" href="/">Home</a> <br> 
       {% endif %}
-
+      <br>
     {% else %}
     {% endif %}
-    <!--MSU logo header-->
     <header id="msulogo">
       <img src="https://cdn01.its.msstate.edu/i/logos/cas/HORIZONTAL_WEB_maroon.svg" width="500px">
     </header>

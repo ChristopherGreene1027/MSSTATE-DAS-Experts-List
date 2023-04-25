@@ -38,5 +38,26 @@
     right: 55vh;
     top: 7.5vh;
 }
+    
+/*.SubmissionBox {
+    border-radius: 5px;
+    width: 1050px;
+    padding: 50px;
+    padding-left: 165px;
+    padding-right: 100px;
+    position: relative;
+    left: 360px;
+    background-color: grey;
+}  */
 
+#admin{
+    position: relative;
+    left: 1185px;
+    top: 5px;
+}
 
+#home{
+    position: relative;
+    left: 1100px;
+    top: -70px;
+}

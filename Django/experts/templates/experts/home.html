@@ -3,6 +3,7 @@
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'experts/home.css' %}">
+<body>
 <h1 id="expertsHeading">Experts List</h1>
 <h2 id="expertsHeading2">All Experts</h2>
 {% if experts_list %}
@@ -51,4 +52,6 @@ Experts list not found
 Topics list not found
 {% endif %}
 {% endblock %}
+</body>
+
 
