@@ -16,7 +16,7 @@
     z-index: 2;
 }
 
-#adminbutton{
+/*#adminbutton{
     position: absolute;
     right: 15vh;
     top: 10vh;
@@ -30,6 +30,7 @@
     float:right;
 }
 
+
 #currentuser{
     font-family: Arial, Helvetica, sans-serif;
     position: absolute;
@@ -38,6 +39,7 @@
     right: 55vh;
     top: 7.5vh;
 }
+*/
     
 /*.SubmissionBox {
     border-radius: 5px;
@@ -48,7 +50,7 @@
     position: relative;
     left: 360px;
     background-color: grey;
-}  */
+}  
 
 #admin{
     position: relative;
@@ -60,4 +62,24 @@
     position: relative;
     left: 1100px;
     top: -70px;
+}
+*/
+
+/* REMOVES ALL LINK UNDERLINES */
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+    color: #5D1725;
+}
+
+#nav{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #5D1725;
+    position: absolute;
+    padding: 5vh;
+    float: right;
+    right: 25vh;
+    top: 7.5vh;
+    z-index: 3;
 }

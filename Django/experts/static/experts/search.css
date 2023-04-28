@@ -4,6 +4,7 @@ h2{
     text-align: left;
     position: relative;
     top: 10vh;
+    color:#5D1725;
 }
 
 #topicsearchresults{
@@ -21,6 +22,7 @@ h2{
     padding: 5vh;
     left: 25vh;
     top: 7vh;
+    z-index: 2;
 }
 
 #expertsearchedphoto{
@@ -33,11 +35,12 @@ h2{
 
 #searchbar{
     font-family: Arial, Helvetica, sans-serif;
-    position: relative;
+    position: absolute;
     padding: 5vh;
     float: right;
     right: 15vh;
-    top: -65vh;
+    top: -15vh;
+    z-index: 2;
 }
 
 .search-form{

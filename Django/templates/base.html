@@ -8,16 +8,23 @@
 <body>
   <main>
     {% if user.is_authenticated %}
-      <!--admin page button-->
+      <!--nav bar-->
+      <section id="nav">
+      <!--current user-->
+      Currently logged in as: {{ user.username }} &nbsp; &nbsp; &nbsp;
+
+      <!--admin-->
       {% if user.is_superuser %}
-      <a id="admin" href="/admin">Admin Page</a><br>
+      <a href="/admin">Admin Page &nbsp;</a>
       {% endif %}
-      <section id ="currentUser">Currently Logged in as: {{ user.username }} </section>
-      <br>
-      {% if request.path != "/" %}
-      <br><a id="home" href="/">Home</a> <br> 
-      {% endif %}
-      <br>
+
+      <!--home-->
+      <a href="/">Home &nbsp; </a>
+
+      <!--news-->
+      <a href="/news">News</a>
+
+      </section>
     {% else %}
     {% endif %}
     <header id="msulogo">
