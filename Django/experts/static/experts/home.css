@@ -1,43 +1,55 @@
-h2{
+#expertsHeading{
     font-family: Arial, Helvetica, sans-serif;
-    padding: 5vh;
+    padding: 4vh;
     text-align: left;
     position: relative;
-    top: 10vh;
+    top: 13vh;
 }
 
-#topicsearchresults{
+#expertsHeading2{
     font-family: Arial, Helvetica, sans-serif;
-    padding: 5vh;
+    padding: 4vh;
     text-align: left;
     position: relative;
-    top: 1vh;
+    top: 8vh;
 }
 
-#expertsearched{
+#expertslisted{
     font-family: Arial, Helvetica, sans-serif;
     position: relative;
     text-align: left;
-    padding: 5vh;
+    padding: 4vh;
     left: 25vh;
-    top: 7vh;
+    top: 5vh;
+    z-index: 2;
 }
 
-#expertsearchedphoto{
+#expertslisted-picture{
     position: relative;
     text-align: left;
-    padding: 5vh;
+    padding: 4vh;
     left: 5vh;
-    top: -7vh;
+    top: -12vh;
+}
+
+#topics-homepage{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 4vh;
+    text-align: left;
+    position: absolute;
+    top: 22vh;
+    left: 100vh;
+    z-index: 3;
 }
 
 #searchbar{
     font-family: Arial, Helvetica, sans-serif;
-    position: relative;
+    position: absolute;
     padding: 5vh;
     float: right;
-    right: 15vh;
-    top: -65vh;
+    right: 14vh;
+    top: -19vh;
+    z-index: 1;
 }
 
 .search-form{
@@ -65,3 +77,20 @@ h2{
     background-color: #5D1725;
     color: #ffffff;
   }
+.sidebar {
+    width: 150px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+    float: right;
+    padding-top: 40px;
+    background-color: maroon;
+    }
+    
+.sidebar div {
+    padding: 8px;
+    font-size: 20px;
+    display: block;
+    }

@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
 <html>
   {% load static %}
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="{% static 'experts/style.css' %}">
 <head>
   <meta charset="utf-8">
   <title>{% block title %}Base{% endblock %}</title>
@@ -11,29 +8,21 @@
 <body>
   <main>
     {% if user.is_authenticated %}
+      <!--admin page button-->
       {% if user.is_superuser %}
-
-        <section class="hero">
-          <div class="hero-body">
-            <img src="https://cdn01.its.msstate.edu/i/logos/cas/HORIZONTAL_WEB_maroon.svg" width="500px">
-          </div>
-        </section>
-
-        <section class="section">
-          <a href="/admin"><h1 class="is-size-4">Admin Page</h1></a><br>
-          <h2 class="is-size-5">
-            <p class="has-text-weight-light">Currently logged in as: {{ user.username }}</p>
-          </h2>
-          {% if request.path != "/" %}
-      <br><a href="/"> <h1 class="is-size-4">Homepage</h1></a> 
+      <a id="admin" href="/admin">Admin Page</a><br>
       {% endif %}
-        </section>
-
+      <section id ="currentUser">Currently Logged in as: {{ user.username }} </section>
+      <br>
+      {% if request.path != "/" %}
+      <br><a id="home" href="/">Home</a> <br> 
       {% endif %}
-      
-
+      <br>
     {% else %}
     {% endif %}
+    <header id="msulogo">
+      <img src="https://cdn01.its.msstate.edu/i/logos/cas/HORIZONTAL_WEB_maroon.svg" width="500px">
+    </header>
     {% block content %}
     {% endblock %}
   </main>

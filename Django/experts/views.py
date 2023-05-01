@@ -12,7 +12,6 @@ def search(request):
                                                      'topicsearched':topicsearched})
     else:
         return render(request,'experts/search.html',{})
-
 def home(request):
     experts_list = Expert.objects.order_by('-expert_Name')
     topics_list = Topic.objects.order_by('-topic_Name')
@@ -21,7 +20,10 @@ def home(request):
 
 def expert(request, expert_id):
     expert = get_object_or_404(Expert, pk=expert_id)
-    return render(request, 'experts/expert.html',{'expert':expert})
+    #expertImg = Expert.objects.expert_Picture()
+    #context = {'expertImg': expertImg}
+    context = {'expert' : expert}
+    return render(request, 'experts/expert.html', context)
 
 def topic(request, topic_id):
     experts_list = Expert.objects.order_by('-expert_Name')

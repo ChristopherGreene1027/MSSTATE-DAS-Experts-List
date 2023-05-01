@@ -1,23 +1,48 @@
 {% extends 'base.html' %}
-{% block title %}Home{% endblock %}
+{% block title %}Bio{% endblock %}
 {% block content %}
+{% load static %}
+  <link rel="stylesheet" href="{% static 'experts/bio.css' %}">
 {% if expert %}
-    <br><br>
-    {{expert.expert_Name}}
+    <h1 id="expertName">{{expert.expert_Name}}</h1>
+    <section id="Picture">
+        <img src = "{{expert.expert_Picture.url}}" alt="img" width="12%">
+    </section>
     <br>
-    Expert in {{expert.expert_Field}}
+    <hr class="solid">
     <br>
-    Phone: {{expert.expert_Phone}}
     <br>
-    Email: {{expert.expert_Email}}
-    <br>
-    Achievements:
-    <br>
-    {{expert_Achievements}}
-    <br>
-    {% for topic in expert.expert_Topics.all %}
-        <a href= '/topic/{{topic.id}}'>{{topic}}</a>
-    {% endfor %}
+    <div class="info">
+        Expert in: {{expert.expert_Field}}
+        <br>
+        <br>
+        Phone: {{expert.expert_Phone}}
+        <br>
+        <br>
+        Email: <a href = "mailto:{{expert.expert_Email}}">{{expert.expert_Email}}</a>
+        <br>
+        {% for link in expert.expert_Links.all %}
+        <section id="linkList">
+            <br>
+            <a href= '{{link.url}}'>{{link.name}}</a>
+        </section>
+        {% endfor %}
+        <br>
+        <h2 id="Achievements">Achievements: </h2>
+        <br>
+        {{expert.expert_Achievements}}
+        <br>
+        <p class="spacing">
+            <h2 id="Topic">Topics: </h2>
+            {% for topic in expert.expert_Topics.all %}
+            <section id="topicList">
+                <ul>
+                <li><a href= '/topic/{{topic.id}}'>{{topic}}</a></li>
+                </ul>
+            </section>
+            {% endfor %}
+        </p>
+    </div>
 {% else %}
 Expert not found
 {% endif %}
