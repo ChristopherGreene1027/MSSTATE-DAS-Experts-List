@@ -8,48 +8,51 @@
 <h2 id="smallnewsHeading">News</h2>
 <br>
 
-{% if news_list %}
-    {% for news in news_list %}
+<div id="newsContainer">
+        {% if news_list %}
+        {% for news in news_list %}
 
-        <section id="newsList">
-            <img id="newslisted-picture" src="{{ news.news_Image.url }}" />
-            <h3 id="newsTitle"><a href='{{news.news_Link}}'>{{news.news_Name}}</a></h3>
-            {% for expert in news.news_Expert.all %}
-            <a id="newsExpert" href= 'expert/{{expert.id}}'>{{expert.expert_Name}}</a>
-            {% endfor %}
-            <p id="newsDescription">{{news.news_Description}}</p>
-        </section>
+            <section id="newsList">
+                <img id="newslisted-picture" src="{{ news.news_Image.url }}" />
+                <h3 id="newsTitle"><a href='{{news.news_Link}}'>{{news.news_Name}}</a></h3>
+                {% for expert in news.news_Expert.all %}
+                <a id="newsExpert" href= 'expert/{{expert.id}}'>{{expert.expert_Name}}</a>
+                {% endfor %}
+                <p id="newsDescription">{{news.news_Description}}</p>
+            </section>
 
-    {% endfor %}
-{% else %}
-News list not found
-{% endif %}
-
-{% if topics_list %}
-
-<!--Shamelessly Copied from Ferrin-->
-    <section id="topics-newspage">
-        <h2 id="expertsTopic">Experts by topic</h2>
-        <br>
-        <ul>
-        {% for topic in topics_list %}
-            <li><a href= '/topic/{{topic.id}}'>{{topic}}</a></li> <br>
         {% endfor %}
-    </ul>
-</section>
+    {% else %}
+    News list not found
+    {% endif %}
 
-{% else %}
-Topics list not found
-{%endif %}
+    <h2 id="smallsearchHeading">Search</h2>
+    <!--Ferrin's Searchbar-->
+    <section id="searchbar">
+        <form class="search-form" method=POST action="{% url 'experts:search' %}"> 
+        {% csrf_token %}
+        <input type="text" class="search" placeholder="Expert or topic" name="searched">
+        <input type="submit" name="submit" class="submit" value="Search">
+        </form>
+    </section>
 
-<h2 id="smallsearchHeading">Search</h2>
-<!--Ferrin's Searchbar-->
-<section id="searchbar">
-    <form class="search-form" method=POST action="{% url 'experts:search' %}"> 
-    {% csrf_token %}
-    <input type="text" class="search" placeholder="Expert or topic" name="searched">
-    <input type="submit" name="submit" class="submit" value="Search">
-    </form>
-</section>
+    {% if topics_list %}
+
+    <!--Shamelessly Copied from Ferrin-->
+       <section id="topics-newspage">
+            <h2 id="expertsTopic">Experts by topic</h2>
+            <br>
+            <ul>
+            {% for topic in topics_list %}
+                <li><a href= '/topic/{{topic.id}}'>{{topic}}</a></li> <br>
+            {% endfor %}
+        </ul>
+    </section>
+
+    {% else %}
+    Topics list not found
+    {%endif %}
+
+</div>
 
 {% endblock %}

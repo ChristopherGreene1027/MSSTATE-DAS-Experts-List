@@ -1,32 +1,44 @@
 #newsHeading {
     position: relative; 
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 48px;
-    margin-top: 0px;
-    margin-left: 2vw; /*28*/
+    font-size: 2.5vw; /*48px*/
+    top: 100px; /*0px*/
+    left: 2vw; /*28*/
+    background-color: lightpink;                        /*temp*/
 }
 
 #smallnewsHeading {
     position: relative;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
-    margin-top: 2.13vh; /*20*/
-    margin-left: 2vw; /*34*/
+    font-size: 2vw; /*30px*/
+    top: 115px; /*20*/
+    left: 2vw; /*34*/
+    background-color: lightsalmon;                     /*temp*/
 }
 
 .lineBreak {
-    position: absolute;
+    position: relative;
     border: 2px solid #5e1725;
     width: 100%;
+    top: 100px;
+}
+
+#newsContainer {
+    position: relative;
+    top: 130px;
+    left: 4vw;
+    background-color: grey;                            /*temp*/
+    height: 100vh;
+    width: 100vw;
 }
 
 #newsList {
     position: relative;
     left: 3.22vw; /*62*/
     border-bottom: 1px solid #5e1726;
-    background-color: white;
     width: 40vw; /*530 -> 27.60vw*/
     height: 20.27vh; /*190*/
+    background-color: lightgray;                 /*temp*/
 }
 
 #newslisted-picture{
@@ -39,64 +51,66 @@
 #newsTitle {
     position: absolute; 
     font-size: 20px;
-    top: 1.06vh; /*10*/
-    left: 8.33vw; /*160*/
+    top: 10px; /*10*/
+    left: 160px; /*160*/
 }
 
 #newsExpert {
     position: absolute;
-    top: 4vh; /*20*/
-    left: 8.33vw; /*168*/
+    top: 50px; /*20*/
+    left: 160px; /*168*/
 }
 
 #newsDescription {
     position: absolute; 
-    top: 6.4vh; /*60*/
-    left: 8.33vw; /*160*/
+    top: 60px; /*60*/
+    left: 160; /*160*/
 }
 
 #topics-newspage {
-    position: relative;
-    left: 67vw; /*62*/
-    top: -60vh; /*150px -> 25vh*/
+    position: absolute;
+    right: 15.5vw;
+    top: 170px; /*150px -> 25vh*/
     width: 21.18vw; /*300*/
-    height: 70vh; /**/
-    background-color: white;
+    height: 400px; /**/
+    background-color: lightcoral;             /*temp*/
 }
 
 #expertsTopic {
     font-size: 30px;
 }
 
+
+
 /*Ferrin's searchbar css*/
 #smallsearchHeading {
     position: absolute;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
-    top: 55vh;
-    right: 27vw;
+    font-size: 2vw;
+    top: 20px;
+    right: 30vw;
 }
 
 #searchbar{
     font-family: Arial, Helvetica, sans-serif;
     position: absolute;
-    padding: 5vh;
+    padding: 0vh;
+    right: 6.5vw;
     float: right;
-    right: 11vh;
-    top: 20vh;
+    top: 110px;
     z-index: 5;
 }
 
 .search-form{
-    width: 50vh;
+    width: 30vw; /*50vh*/
     margin: auto;
-    margin-top: 35vh;
+    margin-top: 0px;
   }
   
   input {
     padding: .5vh 1vh;
     border: 0;
-    font-size: 16px;
+    font-size: 1vw;
     border-style: solid;
     border-width: 1px;
     border-color: lightgray;
