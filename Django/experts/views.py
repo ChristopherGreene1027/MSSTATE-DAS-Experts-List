@@ -38,13 +38,18 @@ def news(request):
     news_list = News.objects.order_by('-created_at')
     news_images = News.objects.order_by('-news_Image')
     context = {'experts_list' : experts_list,'topics_list' : topics_list,'news_list' : news_list, 'news_images' : news_images}
-    context_list = [experts_list, topics_list, news_list, news_images]
 
     #BROKEN PAGINATION
+    context_list = News.objects.all().order_by('-created_at')
+    page = request.GET.get('page', 1)
     paginator = Paginator(context_list, 4)
-    page_number = request.GET.get('page')
-    context_list_b = paginator.get_page(page_number)
+    post = paginator.page(page)
+
+    context_b = {
+        'post' : post,
+        'topics_list' : topics_list,
+    }
 
     #This is supposed to return 6 news classes' values to the HTML
     #return render(request, 'experts/news.html', {'page_number' : page_number})
-    return render(request, 'experts/news.html', context)
+    return render(request, 'experts/news.html', context_b)

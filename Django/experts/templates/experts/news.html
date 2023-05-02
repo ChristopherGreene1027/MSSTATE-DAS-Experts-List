@@ -9,8 +9,8 @@
 <br>
 
 <div id="newsContainer">
-        {% if news_list %}
-        {% for news in news_list %}
+        {% if post %}
+        {% for news in post %}
 
             <section id="newsList">
                 <img id="newslisted-picture" src="{{ news.news_Image.url }}" />
@@ -53,9 +53,22 @@
     Topics list not found
     {%endif %}
 
-</div>
-<br>
-<!--Pagination should either go here or in the big div-->
+    <!--Paginator-->
+    <div id="paginator">
+        {% if post.has_previous %}
+            <a href="?page=1">&laquo; &laquo; First</a>
+            <a href="?page={{post.previous_page_number }}"> &emsp; &laquo; Previous</a>
 
+        {% endif %}
+
+        <!--Page {{ post.number }} of {{ post.paginator.num_pages }}-->
+        <a href="">Page {{ post.number }} of {{ post.paginator.num_pages }}</a>
+
+        {% if post.has_next %}
+            <a href="?page={{ post.next_page_number }}">Next &raquo; &emsp;</a>
+            <a href="?page={{ post.paginator.num_pages }}">Last &raquo; &raquo;</a> 
+        {% endif %}
+    </div>
+</div>
 
 {% endblock %}
