@@ -41,7 +41,7 @@ def news(request):
     context_list = [experts_list, topics_list, news_list, news_images]
 
     #BROKEN PAGINATION
-    paginator = Paginator(context_list, 6)
+    paginator = Paginator(context_list, 4)
     page_number = request.GET.get('page')
     context_list_b = paginator.get_page(page_number)
 

@@ -1,17 +1,17 @@
 #newsHeading {
     position: relative; 
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 2.5vw; /*48px*/
-    top: 100px; /*0px*/
-    left: 2vw; /*28*/
+    font-size: 2.5vw; 
+    top: 100px;
+    left: 2vw; 
 }
 
 #smallnewsHeading {
     position: relative;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 2vw; /*30px*/
-    top: 115px; /*20*/
-    left: 2vw; /*34*/
+    font-size: 2vw; 
+    top: 80px; 
+    left: 2vw; 
 }
 
 .lineBreak {
@@ -23,18 +23,18 @@
 
 #newsContainer {
     position: relative;
-    top: 130px;
-    left: 4vw;
+    top: 50px;
+    left: -1vw;
     height: 100vh;
     width: 100vw;
 }
 
 #newsList {
     position: relative;
-    left: 3.22vw; /*62*/
+    left: 3.22vw; 
     border-bottom: 1px solid #5e1726;
-    width: 40vw; /*530 -> 27.60vw*/
-    height: 20.27vh; /*190*/
+    width: 40vw; 
+    height: 20.27vh;
 }
 
 #newslisted-picture{
@@ -65,8 +65,8 @@
 
 #topics-newspage {
     position: absolute;
-    right: 15.5vw;
-    top: 170px; /*150px -> 25vh*/
+    right: 10vw;
+    top: 120px; /*150px -> 25vh*/
     width: 21.18vw; /*300*/
     height: 400px; /**/
 }
@@ -82,17 +82,17 @@
     position: absolute;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2vw;
-    top: 20px;
-    right: 30vw;
+    top: 0px;
+    right: 25vw;
 }
 
 #searchbar{
     font-family: Arial, Helvetica, sans-serif;
     position: absolute;
     padding: 0vh;
-    right: 6.5vw;
+    right: 2vw;
     float: right;
-    top: 110px;
+    top: 80px;
     z-index: 5;
 }
 
