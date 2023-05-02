@@ -6,10 +6,11 @@
 {% if expert %}
     <h1 id="expertName">{{expert.expert_Name}}</h1>
     <section id="Picture">
-        <img src = "{{expert.expert_Picture.url}}" alt="img" width="12%">
+        <img src = "{{expert.expert_Picture.url}}" alt="img" width="10%">
     </section>
     <br>
     <hr class="solid">
+    <br>
     <br>
     <br>
     <div class="info">
@@ -24,13 +25,13 @@
         {% for link in expert.expert_Links.all %}
         <section id="linkList">
             <br>
-            <a href= '{{link.url}}'>{{link.name}}</a>
+            Link: <a href= '{{link.url}}'>{{link.name}}</a>
         </section>
         {% endfor %}
         <br>
         <h2 id="Achievements">Achievements: </h2>
-        <br>
         {{expert.expert_Achievements}}
+        <br>
         <br>
         <p class="spacing">
             <h2 id="Topic">Topics: </h2>
