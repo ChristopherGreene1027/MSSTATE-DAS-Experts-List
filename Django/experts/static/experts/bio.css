@@ -31,11 +31,11 @@ p.spacing{
 }
 
 hr.solid{
-    border-radius: 0.6vh;
-    width: 26vh;
-    position: relative;
-    bottom: -2vh;
-    right: -7.3vh;
+    border-radius: 0vh;
+    width: 0vh;
+    position: absolute;
+    bottom: 60vh;
+    right: 75.5vh;
 }
 
 #topicList{
