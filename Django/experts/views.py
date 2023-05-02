@@ -1,6 +1,7 @@
 from urllib import request
 from django.shortcuts import get_object_or_404, render
 from .models import Expert, Topic, News
+from django.core.paginator import Paginator
 
 def search(request):
     if request.method == "POST":
@@ -35,6 +36,15 @@ def news(request):
     experts_list = Expert.objects.order_by('-expert_Name')
     topics_list = Topic.objects.order_by('-topic_Name')
     news_list = News.objects.order_by('-created_at')
-    context = {'experts_list' : experts_list,'topics_list' : topics_list,'news_list':news_list}
     news_images = News.objects.order_by('-news_Image')
-    return render(request, 'experts/news.html',context)
+    context = {'experts_list' : experts_list,'topics_list' : topics_list,'news_list' : news_list, 'news_images' : news_images}
+    context_list = [experts_list, topics_list, news_list, news_images]
+
+    #BROKEN PAGINATION
+    paginator = Paginator(context_list, 6)
+    page_number = request.GET.get('page')
+    context_list_b = paginator.get_page(page_number)
+
+    #This is supposed to return 6 news classes' values to the HTML
+    #return render(request, 'experts/news.html', {'page_number' : page_number})
+    return render(request, 'experts/news.html', context)

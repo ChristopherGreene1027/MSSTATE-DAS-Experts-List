@@ -4,7 +4,6 @@
     font-size: 2.5vw; /*48px*/
     top: 100px; /*0px*/
     left: 2vw; /*28*/
-    background-color: lightpink;                        /*temp*/
 }
 
 #smallnewsHeading {
@@ -13,7 +12,6 @@
     font-size: 2vw; /*30px*/
     top: 115px; /*20*/
     left: 2vw; /*34*/
-    background-color: lightsalmon;                     /*temp*/
 }
 
 .lineBreak {
@@ -27,7 +25,6 @@
     position: relative;
     top: 130px;
     left: 4vw;
-    background-color: grey;                            /*temp*/
     height: 100vh;
     width: 100vw;
 }
@@ -38,7 +35,6 @@
     border-bottom: 1px solid #5e1726;
     width: 40vw; /*530 -> 27.60vw*/
     height: 20.27vh; /*190*/
-    background-color: lightgray;                 /*temp*/
 }
 
 #newslisted-picture{
@@ -73,7 +69,6 @@
     top: 170px; /*150px -> 25vh*/
     width: 21.18vw; /*300*/
     height: 400px; /**/
-    background-color: lightcoral;             /*temp*/
 }
 
 #expertsTopic {
