@@ -41,9 +41,10 @@ class News(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     news_Name = models.TextField()
     news_Description = models.TextField()
-    news_Image = models.ImageField(null=True, blank=True, upload_to="images/")
+    news_Image = models.ImageField(null=False, blank=False, upload_to="images/")
     news_Link = models.URLField()
     news_Link_Description = models.TextField()
     news_Expert = models.ManyToManyField(Expert)
+
     def __str__(self):
         return self.news_Name
