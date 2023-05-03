@@ -1,17 +1,16 @@
 #expertName{
     font-family: Arial, Helvetica, sans-serif;
     position: absolute;
-    bottom: 65vh;
-    left: 94.3vh;
-    font-size: 5vh;
+    top: 21vh;
+    left: 46.3vw;
+    /*font-size: 5vh;*/
 }
 
 .info {
     font-family: Arial, Helvetica, sans-serif;
-    padding-left: 145vh;
     position: absolute;
-    top: 35vh;
-    right: 86.5vh;
+    top: 32vh;
+    left: 46.3vw;
 }
 
 #Topic{
@@ -31,7 +30,7 @@ p.spacing{
 #Picture{
     position: relative;
     top: 23.5vh;
-    right: -60vh;
+    left: 30vw;
 }
 
 hr.solid{
